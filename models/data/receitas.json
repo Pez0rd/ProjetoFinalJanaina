@@ -1,1 +1,9 @@
-[]
+[
+    {
+        "nomeReceita": "Bolo Cacau",
+        "ingredientes": [
+            "Teste"
+        ],
+        "imagemReceita": "uploads/image/Bolo Cacau.jpeg"
+    }
+]
