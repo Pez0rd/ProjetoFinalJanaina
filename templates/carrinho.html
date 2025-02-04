@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+    <h1>Añadir un artículo al carrito!     <img src="../static/img/cestinha.webp" alt="" width="70"></h1>
+    <hr>
+
+    <section class="tam4">
+        <table>
+            <thead>
+                <tr>
+                    <th><h3>Pedidos: </h3></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in carrinhoCompras %}
+                    <tr>
+                        <td>{{i['pedido']}}</td>
+                        <td>
+                            <form method="POST" action="{{url_for('front_controller.deletar', id=i['id'])}}">
+                                <button type="submit">Eliminar</button>
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>    
+{% endblock conteudo %}

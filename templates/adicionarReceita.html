@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+    
+    <h1>Cuéntanos tu propia receta!</h1>
+
+
+    <section class="tam3">
+        <form class="adicionarReceita" method="POST" action="{{ url_for('front_controller.adicionarReceita') }}" enctype="multipart/form-data">
+            <label for="nomeReceita">Nombre de la receta: </label>
+            <input type="text" name="nomeReceita" id="nomeReceita" class="form-control" required>
+            
+            <label for="imagemReceita">IInserta la imagen de tu deliciosa receta:</label>
+            <input type="file" name="imagemReceita" id="imagemReceita" required>
+            
+            <label for="ingredientes" id="ingredientes">Ingredientes: </label>
+            <textarea name="ingredientes" id="ingredientes" class="form-control" required></textarea>
+        
+            <button type="submit">Añadir</button>
+        </form>
+    </section>    
+{% endblock conteudo %}

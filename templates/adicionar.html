@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+    <h1>Añadir un artículo al carrito</h1>
+
+    <section class="tam2">
+        <form method="POST" action="{{url_for('front_controller.adicionarCarrinho')}}">
+            <label for="selecionar">Seleccione el elemento deseado</label>
+            <br>
+            <select name="selecionar" id="selecionar">
+                <option value="Bolo de Cenoura">Pastel de Zanahoria</option>
+                <option value="Bolo de Chocolate">Pastel de Chocolate</option>
+                <option value="Bolo de Doce de Leite">Pastel de Crema de Leche</option>
+                <option value="Bolo de Laranja">Pastel de Naranja</option>
+                <option value="Bolo de Leite Ninho">Pastel de Leche Ninho</option>
+                <option value="Bolo de LImão">Pastel de Limón</option>
+                <option value="Bolo de Morango">Pastel de Fresa</option>
+                <option value="Bolo de Pistache">Pastel de Pistacho</option>
+                <option value="Brownie Tradicional">Brownie Tradicional</option>
+                <option value="Brownie c/ recheio de Brigadeiro">Brownie con relleno de Chocolate</option>
+                <option value="Brownie c/ recheio de Kinder Bueno">Brownie con relleno de Kinder</option>
+            </select>
+            <br>
+            <button type="submit">Añadir</button>
+            <br>
+            <a href="{{url_for('front_controller.index')}}">Volver</a>
+        </form>
+    </section>    
+{% endblock conteudo %}

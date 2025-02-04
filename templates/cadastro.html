@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+    <section class="tam">
+        <div class="container-fluid">
+            <form class="tam" method="POST" action="{{url_for('front_controller.cadastro')}}">
+                <legend>Pagina de REGISTRO de usuario</legend>
+                <section class="cadastro">
+                    <label for="staticEmail" class="col-sm-2 col-form-label">Nombre de usuario: </label>          
+                    <input type="text" class="form-control" class="form-control" id="staticEmail" name="nomeCadastro">
+                
+                    <label for="inputPassword" class="col-sm-2 col-form-label">Contraseña: </label>
+                    <input type="password" class="form-control" id="inputPassword" name="senhaCadastro" required>
+                    <br>
+                    <button class="botao" type="submit">Registar</button>
+                </section>
+            
+            </form>
+        </div>
+    </section>
+    
+{% endblock conteudo %}

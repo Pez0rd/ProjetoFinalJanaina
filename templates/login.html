@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+    <section class="tan">
+        <div class="container-fluid">
+            <form class="s" method="POST" action="{{url_for('front_controller.login')}}">
+                <legend>Página para ACCESO de usuario</legend>
+                <label for="staticEmail" class="col-sm-2 col-form-label">Nombre de usuario:</label>          
+                <input type="text" class="form-control" class="form-control" id="staticEmail" name="nomeLogin">
+                
+                <label for="inputPassword" class="col-sm-2 col-form-label">Contraseña:</label>
+                <input type="password" class="form-control" id="inputPassword" name="senhaLogin" required>
+                <br>
+                <button type="submit">Acceso</button>
+            </form>
+        </div>
+    </section>
+   
+{% endblock conteudo %}

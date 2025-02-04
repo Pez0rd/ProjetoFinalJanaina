@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+    <h1>Página de traducción de recetas</h1>
+    <legend>Debido a que nuestro sitio web está en español, es posible que desees traducir tu receta a tu idioma, así que simplemente pega nuestra receta copiada en el campo de escritura a continuación:</legend>
+
+    <section class="trad">
+        <form method="POST" action="{{ url_for('front_controller.traduzir') }}">
+            <textarea name="texto" rows="4" cols="50" placeholder="Digite o texto para traduzir" required></textarea><br><br>
+
+            <label for="idioma_origem">Idioma de Origem:</label>
+            <select name="idioma_origem" required>
+                <option value="en">Inglês</option>
+                <option value="es">Espanhol</option>
+                <option value="fr">Francês</option>
+                <option value="de">Alemão</option>
+                <option value="it">Italiano</option>
+
+            </select><br><br>
+
+            <label for="idioma_destino">Idioma de Destino:</label>
+            <select name="idioma_destino" required>
+                <option value="en">Inglês</option>
+                <option value="es">Espanhol</option>
+                <option value="fr">Francês</option>
+                <option value="de">Alemão</option>
+                <option value="it">Italiano</option>
+            
+            </select><br><br>
+
+            <input type="submit" value="Traduzir">
+        </form>
+    </section>
+
+    {% if traducao %}
+        <h3>Texto Original:</h3>
+        <p>{{ texto }}</p>
+
+        <h3>Tradução:</h3>
+        <p>{{ traducao }}</p>
+    {% endif %}
+{% endblock %}
